@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'sa7kgxdj9_op2el!+ajd=_5s(h-!%rf-_n#gcpl#st8$ftkcu7'
+SECRET_KEY = '0z0$xjoeg908x0_2feenn2&+zgn3tz3^@3(*zg#fc(28bh290@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,22 +30,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    #'django.contrib.admin',
-    #'django.contrib.auth',
-    #'django.contrib.contenttypes',
-    #'django.contrib.sessions',
-    #'django.contrib.messages',
-    #'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 )
 
 MIDDLEWARE_CLASSES = (
-    #'django.contrib.sessions.middleware.SessionMiddleware',
-    #'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
-    #'django.contrib.auth.middleware.AuthenticationMiddleware',
-    #'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    #'django.contrib.messages.middleware.MessageMiddleware',
-    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'ask.urls'
