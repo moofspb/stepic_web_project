@@ -1,6 +1,4 @@
 mysql -uroot -e "CREATE DATABASE qa"
-mysql -uroot -e "CREATE USER 'moof'@'localhost' IDENTIFIED BY 'qapass';
-                 GRANT ALL ON qa.* TO 'moof'@'localhost';"
 
 sudo python /home/box/web/ask/manage.py syncbd
 

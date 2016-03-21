@@ -82,8 +82,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'qa',
         'HOST': 'localhost',
-        'USER': 'moof',
-        'PASSWORD': 'qapass',
     }
 }
 
