@@ -81,7 +81,7 @@ DATABASES = {
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'qa',
-        'DATABASE_HOST': '/var/run/mysql',
+        'HOST': 'localhost',
         'USER': 'moof',
         'PASSWORD': 'qapass',
     }
