@@ -63,16 +63,16 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 #    }
 # }
 
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'ASK',
-#        'USER': 'moof',
-#        'PASSWORD': '1234',
-#        'HOST': 'localhost',
-#        'PORT': 3306,
-#    }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ASK',
+        'USER': 'moof',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': 3306,
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -92,8 +92,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+BASE_DIR = os.path.abspath(__file__)
+BASE_DIR = os.path.dirname(BASE_DIR)
+BASE_DIR = os.path.dirname(BASE_DIR)
 TEMPLATE_DIRS = (
-    BASE_DIR + 'templates',
+    BASE_DIR + '/templates',
 )
 
 STATIC_ROOT = BASE_DIR + '/static'
