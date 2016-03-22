@@ -10,4 +10,4 @@ sudo /etc/init.d/mysql restart
 mysql -uroot -e "CREATE DATABASE ASK"
 mysql -uroot -e "CREATE USER 'moof'@'localhost' IDENTIFIED BY '1234'"
 mysql -uroot -e "GRANT ALL PRIVILEGES ON ASK.* TO 'moof'@'localhost'"
-/home/box/web/manage.py syncdb
+/home/box/web/ask/manage.py syncdb
