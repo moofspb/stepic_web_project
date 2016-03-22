@@ -5,20 +5,13 @@ from django.contrib.auth.models import User
 class Question(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
-    added_at = models.DateTimeField(blank=True)
+    added_at = models.DateTimeField()
     rating = models.IntegerField()
-    author = models.ForeignKey(User, related_name='+')
+    author = models.CharField(max_length=255)
     likes = models.ManyToManyField(User)
-
-    def __unicode__(self):
-        return self.title
-
 
 class Answer(models.Model):
     text = models.TextField()
-    added_at = models.DateTimeField(blank=True)
-    question = models.ForeignKey(Question, related_name='+')
-    author = models.ForeignKey(User, related_name='+')
-
-    def __unicode__(self):
-        return self.title
+    added_at = models.DateTimeField()
+    question = models.CharField()
+    author = models.CharField()

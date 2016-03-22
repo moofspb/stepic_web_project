@@ -1,12 +1,13 @@
-mysql -uroot -e "CREATE DATABASE qa"
-
-sudo python /home/box/web/ask/manage.py syncbd
-
-sudo rm -r /etc/nginx/sites-enabled/default.conf
-sudo ﻿/bin/ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/test.conf
+sudo rm -r /etc/nginx/sites-enabled/default
+sudo ﻿ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/test.conf
 sudo /etc/init.d/nginx restart
 
-sudo rm -r /etc/gunicorn.d/*
-sudo /bin/ln -sf /home/box/web/etc/hello.py  /etc/gunicorn.d/hello.py
-sudo /bin/ln -sf /home/box/web/etc/qa.py  /etc/gunicorn.d/qa.py
+sudo ln -s /home/box/web/etc/gunicorn.conf   /etc/gunicorn.d/test
+sudo ln -s /home/box/web/etc/gunicorn_ask.conf /etc/gunicorn.d/ask
 sudo /etc/init.d/gunicorn restart
+
+sudo /etc/init.d/mysql restart
+mysql -uroot -e "CREATE DATABASE ASK"
+mysql -uroot -e "CREATE USER 'moof'@'localhost' IDENTIFIED BY '1234'"
+mysql -uroot -e "GRANT ALL PRIVILEGES ON ASK.* TO 'moof'@'localhost'"
+/home/box/web/manage.py syncdb
