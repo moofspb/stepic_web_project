@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'qa',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,16 +63,16 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 #    }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ASK',
-        'USER': 'moof',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': 3306,
-    }
-}
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'ASK',
+#        'USER': 'moof',
+#        'PASSWORD': '1234',
+#        'HOST': 'localhost',
+#        'PORT': 3306,
+#    }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -91,3 +92,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+TEMPLATE_DIRS = (
+    BASE_DIR + 'templates',
+)
+
+STATIC_ROOT = BASE_DIR + '/static'
