@@ -1,26 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Popular questions</title>
-    </head>
+Pages:   {% for p in paginator.page_range %} {% if p == page.number %} {{ p }}   {% else %} {{ p }}   {% endif %} {% endfor %}
+Questions: {% for question in questions %}
 
-    <body>
-      Pages: &nbsp;
-      {% for p in paginator.page_range %}
-        {% if p == page.number %}
-           {{ p }} &nbsp;
-        {% else %}
-          <a href="{% url 'popular' p %}"> {{ p }} </a> &nbsp;
-        {% endif %}
-      {% endfor %}
-      <br>
-      Questions:
-      {% for question in questions %}
-      <p>  {{ question.title }}, {{ question.text }} , rate = {{ question.rating }}
-          <a href="{% url 'question' question.id %}"> >>> </a>
-      </p>
-      {% endfor %}
-
-    </body>
-</html> 
+{{ question.title }}, {{ question.text }} , rate = {{ question.rating }} >>>
+{% endfor %} 
