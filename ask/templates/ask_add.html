@@ -2,15 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Question #{{ question.id }}</title>
+        <title>Add question </title>
     </head>
 
     <body>
-      Question:
-      <p> Title - {{ question.title }} </p>
-      <p> Text - {{ question.text }} </p>
-
-      <form method="post" action="/answer/">
+      {% for e in form.non_fields.error %}
+         <div> {{ e }} </div>
+      {% endfor %}
+      <form method="post" action="/ask/">
         {% csrf_token %}
         <fieldset>
             {% for field in form %}
@@ -24,11 +23,5 @@
            <button type="submit"> Save </button>
         </div>
       </form>
-
-      Answers:
-      {% for answer in answers %}
-      <p> {{ answer.text }}  </p>
-      {% endfor %}
-
     </body>
 </html>
